@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.motos.MotoEspecificaActivity">
+
+
+    <FrameLayout
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="?colorPrimaryDark"
+        android:translationZ="4dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusBar"
+        tools:ignore="MissingConstraints">
+
+
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:orientation="horizontal"
+            tools:ignore="MissingClass">
+
+            <ImageView
+
+                android:id="@+id/motominiatura"
+                android:layout_width="150dp"
+                android:layout_height="180dp"
+                android:background="@android:color/white"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:id="@+id/nombre_de_moto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/motominiatura"
+                android:text="nombre de la moto"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/cilindrada_moto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/nombre_de_moto"
+                android:layout_marginLeft="10dp"
+
+                android:layout_toRightOf="@id/motominiatura"
+                android:text="cilindrada"
+                android:textSize="18dp" />
+            <com.github.mikephil.charting.charts.RadarChart
+                android:id="@+id/motostats"
+                android:layout_width="239dp"
+                android:layout_height="131dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="2dp"
+
+                android:layout_marginLeft="2dp"
+                android:layout_toEndOf="@+id/motominiatura"
+                android:layout_toRightOf="@id/motominiatura"
+                app:layout_constraintBottom_toBottomOf="@id/cilindrada_moto">
+
+            </com.github.mikephil.charting.charts.RadarChart>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:background="@android:color/black"
+        app:tabTextColor="@android:color/holo_green_light"
+        android:id="@+id/tablayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/nestedScrollView">
+
+        <com.google.android.material.tabs.TabItem
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caracteristicas"
+            android:id="@+id/tablaCaracteristicas"/>
+
+        <com.google.android.material.tabs.TabItem
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historia"
+            android:id="@+id/tablaHistoria"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:background="@android:color/darker_gray"
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablayout1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
