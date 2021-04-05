@@ -10,7 +10,9 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Hi User!" + "\n"+
+                "Thank you for downloading the app I hope you enjoy it "
+               );
     }
 
     public LiveData<String> getText() {

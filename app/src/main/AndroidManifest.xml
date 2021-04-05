@@ -5,9 +5,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AngelBiker">
+        <activity android:name=".ui.correo.mandarCorreo"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -25,13 +29,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.motos.ListaMarcasActivity"/>
-        <activity android:name=".ui.motos.ListaMotosActivity"/>
-        <activity android:name=".ui.motos.MotoEspecificaActivity"/>
-        <activity android:name=".ui.location.listLocation.ListLocationActivity"/>
-        <activity android:name=".ui.location.location.LocationActivity"/>
-        <activity android:name=".ui.location.map.MapActivity"/>
-        <activity android:name=".ui.location.newLocation.NewLocationActivity"/>
+        <activity android:name=".ui.motos.ListaMarcasActivity" />
+        <activity android:name=".ui.motos.ListaMotosActivity" />
+        <activity android:name=".ui.motos.MotoEspecificaActivity" />
+        <activity android:name=".ui.location.listLocation.ListLocationActivity" />
+        <activity android:name=".ui.location.location.LocationActivity" />
+        <activity android:name=".ui.location.map.MapActivity" />
+        <activity android:name=".ui.location.newLocation.NewLocationActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
