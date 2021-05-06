@@ -11,7 +11,7 @@ public class HomeViewModel extends ViewModel {
     public HomeViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("Hi User!" + "\n"+
-                "Thank you for downloading the app I hope you enjoy it "
+                "Remember If you drive DONT use phone make the roads a safe place"
                );
     }
 
